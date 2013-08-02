@@ -1,18 +1,10 @@
+<%= simple_form_for([@post, @post.comments.build], html: { class: "form-horizontal"}) do |f| %>
 
-<%= form_for([@post, @post.comments.build]) do |f| %>
+  <%= f.input :commenter, label: "Commenter" %>
+  <%= f.input :body, label: "Comment", as: :text, input_html: { rows: "3", class: 'mytextarea' } %>
  
-  <div class="field">
-    <%= f.label :commenter %><br />
-    <%= f.text_field :commenter %>
-  </div>
-
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
-
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   </div>
-  
+   
 <% end %>

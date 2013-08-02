@@ -1,22 +1,29 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'jquery-rails'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'simple_form'
+gem 'devise' 
+gem "paperclip", "~> 3.0"
 
-gem 'sqlite3'
-gem 'carrierwave'
 gem 'haml-rails'
-gem 'bootstrap-sass', '2.3'
+gem 'html2haml'
 gem 'bootstrap-will_paginate', '0.0.9'
 
-gem 'devise' # for authentication
+group :production do
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', '~> 3.2'
+  gem 'bootstrap-sass', '~> 2.3.2.1'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -28,8 +35,6 @@ group :test do
   gem 'rspec-rails'
   gem 'factory_girl'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
